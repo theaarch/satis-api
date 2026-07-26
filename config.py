@@ -3,7 +3,9 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-SATIS_DIR = os.getenv("SATIS_DIR", "/Users/x/Herd/satis")
+SATIS_DIR = os.getenv("SATIS_DIR")
+if not SATIS_DIR:
+    raise ValueError("SATIS_DIR environment variable is not set. Please configure it in your .env file.")
 
 REDIS_URL = os.getenv("REDIS_URL", "redis://127.0.0.1:6379/0")
 
