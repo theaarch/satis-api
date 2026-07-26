@@ -5,7 +5,7 @@ from redis import Redis
 from rq import Queue
 
 from tasks import dispatch
-from config import REDIS_HOST, REDIS_PORT, QUEUE_NAME, GITHUB_WEBHOOK_SECRET
+from config import REDIS_URL, QUEUE_NAME, GITHUB_WEBHOOK_SECRET
 
 app = FastAPI()
 
@@ -47,7 +47,7 @@ async def github_webhook(request: Request):
         import logging
         logging.warning("GITHUB_WEBHOOK_SECRET is not configured. Webhook signature verification is skipped.")
 
-    redis = Redis(host=REDIS_HOST, port=REDIS_PORT)
+    redis = Redis.from_url(REDIS_URL)
     queue = Queue(QUEUE_NAME, connection=redis)
 
     data = await request.json()

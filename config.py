@@ -5,8 +5,7 @@ load_dotenv()
 
 SATIS_DIR = os.getenv("SATIS_DIR", "/Users/x/Herd/satis")
 
-REDIS_HOST = os.getenv("REDIS_HOST", "127.0.0.1")
-REDIS_PORT = int(os.getenv("REDIS_PORT", "6379"))
+REDIS_URL = os.getenv("REDIS_URL", "redis://127.0.0.1:6379/0")
 
 QUEUE_NAME = os.getenv("QUEUE_NAME", "satis")
 
