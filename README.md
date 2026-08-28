@@ -1,6 +1,6 @@
 # Satis API
 
-Satis API is a backend service powered by FastAPI and RQ (Redis Queue). It receives GitHub push webhooks and automatically updates and builds a private PHP Composer Satis repository.
+Satis API is a backend service powered by FastAPI and RQ (Redis Queue). It receives GitHub push webhooks and automatically updates and builds a private PHP Composer [Satis](https://github.com/composer/satis) repository.
 
 ## Features
 
